@@ -22,6 +22,7 @@ type Config struct {
 	DaysXML string
 	VoteInputXML string
 	DbPath string
+	UpdateResultsKey string
 	PathToGoogleKeyJson string
 }
 
@@ -145,7 +146,45 @@ func resultHandler(w http.ResponseWriter, r *http.Request){
 	wnumber := r.URL.Query().Get("wnumber")
 	fmt.Fprintf(w, formResultXml(getWonResults(wnumber)))
 }
-
+func parseUpdErr(err string) (string) {
+	out := "Google sheet plugin error: "
+	if strings.Contains(err, "404") {
+		out += "google sheet not found(404)"
+	} else if strings.Contains(err, "403") {
+		out += "access denied!(403) You should share your sheet to miniapps@miniappstesterbot.iam.gserviceaccount.com"
+	} else {
+		out += "unknown google sheets error: " + err
+	}
+	return out
+}
+func updateResultHandler(w http.ResponseWriter, r *http.Request){
+	log.Println("Got request:", r.URL.String(), "\nContent: ", r.Body)
+	if len(r.URL.Query()) == 0 {
+		fmt.Fprintf(w, "ERROR: %s", "Empty request!")
+		return
+	}
+	key:=r.URL.Query().Get("key")
+	if key != config.UpdateResultsKey{
+		fmt.Fprintf(w, "ERROR: %s", "Invalid key!")
+		return
+	}
+	spreadsheetId := r.URL.Query().Get("spreadheetId")
+	updErr := updSheet(spreadsheetId) // Id of spreadsheet should be passed in "spreadsheetId" parameter
+	if updErr != nil {
+		fmt.Fprintf(w, parseUpdErr(string(updErr.Error())))
+		return
+	}
+	matches, err := getMatchesFromSheet()
+	if err != nil {
+		fmt.Fprintf(w, "ERROR: %s", "Error getting matches from sheet:",err)
+		return
+	}else if len(matches) == 0{
+		fmt.Fprintf(w, "ERROR: %s", "Matches length is empty!")
+		return
+	}
+	go updateMatches(matches)
+	fmt.Fprintf(w, "Updating...")
+}
 func main() {
 	log.Println("Starting...")
 	if len(os.Args) < 2 {
@@ -172,5 +211,6 @@ func main() {
 	http.HandleFunc(config.ServerRoot+"voteInput", voteInputHandler)
 	http.HandleFunc(config.ServerRoot+"vote", voteHandler)
 	http.HandleFunc(config.ServerRoot+"result", resultHandler)
+	http.HandleFunc(config.ServerRoot+"updateResults", updateResultHandler)
 	http.ListenAndServe(":"+config.Port, nil)
 }

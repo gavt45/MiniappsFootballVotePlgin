@@ -11,14 +11,14 @@ func formVoteXml(dates []int)(string){
 		navigation+=fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"matches?day="+strconv.Itoa(day), "june "+strconv.Itoa(day))
 	}
 	out := fmt.Sprintf(string(daysXml), navigation)
-	//log.Println("Vote xml: "+out)
+	//log.Println("Vote xml: "+out
 	return out
 }
 
 func formMatchesXml(matches []Match)(string){
 	navigation := ""
 	for _,match := range matches{
-		navigation+=fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"voteInput?match="+strconv.Itoa(match.idx), match.name)
+		navigation+=fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"voteInput?match="+strconv.Itoa(match.idx), match.team1 + " vs "+ match.team2)
 	}
 	if len(matches) == 0 {
 		navigation=fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot, "No matches to vote. Go to start.")

@@ -14,7 +14,9 @@ type Result struct {
 
 type Match struct {
 	idx int
-	name string
+	team1 string
+	team2 string
+	date int
 }
 
 var database=new(sql.DB)
@@ -74,17 +76,30 @@ func countVotedMatches(wnumber string, date int)(int){
 
 func getAllMatchesByDay(day int)([]Match){
 	out:=[]Match{}
-	rows, err := database.Query("select matches.number,matches.com1,matches.com2 from matches where date="+strconv.Itoa(day))//"select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	rows, err := database.Query("select matches.number,matches.com1,matches.com2,matches.date from matches where date="+strconv.Itoa(day))//"select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
 	log.Println("Db api err: ",err)
 	var idx int
 	var com1 string
 	var com2 string
+	var date int
 	for rows.Next() {
-		rows.Scan(&idx, &com1, &com2)
+		rows.Scan(&idx, &com1, &com2, &date)
 		//log.Println("Teams for user "+wnumber+" and date ",date,": ",com1," ",com2)
-		out=append(out, Match{idx:idx, name:com1+" vs "+com2})
+		out=append(out, Match{idx:idx, team1:com1, team2:com2, date:date})
 	}
 	return out
+}
+
+func updateMatches(matches []Match){
+	if len(matches) == 0{return}
+	stmt, err := database.Prepare("DELETE * FROM matches")
+	log.Println("Db api err: ",err)
+	stmt.Exec()
+	for _, match := range matches{
+		stmt, err := database.Prepare("INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', "+strconv.Itoa(match.date)+")")
+		log.Println("Adding entry: "+"INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', "+strconv.Itoa(match.date)+")"+" err: ",err)
+		stmt.Exec()
+	}
 }
 
 func getMatches(wnumber string, date int)([]Match){
@@ -94,15 +109,16 @@ func getMatches(wnumber string, date int)([]Match){
 		return getAllMatchesByDay(date)
 	}
 	//log.Println("Query: "+"select matches.number,com1,com2 from matches,votes where votes.wnumber='"+wnumber+"' and matches.number<>votes.number and matches.date="+strconv.Itoa(date))
-	rows, err := database.Query("select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	rows, err := database.Query("select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
 	log.Println("Db api err: ",err)
 	var idx int
 	var com1 string
 	var com2 string
+	var matchDate int
 	for rows.Next() {
-		rows.Scan(&idx, &com1, &com2)
+		rows.Scan(&idx, &com1, &com2, &matchDate)
 		//log.Println("Teams for user "+wnumber+" and date ",date,": ",com1," ",com2)
-		out=append(out, Match{idx:idx, name:com1+" vs "+com2})
+		out=append(out, Match{idx:idx, team1:com1, team2:com2, date:matchDate})
 	}
 	//log.Println("Out before remove double: ",out)
 	return out
