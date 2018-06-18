@@ -59,7 +59,7 @@ func init_system() (*Config, []byte, []byte, []byte, []byte, []byte, error) {
 		log.Fatal("Error reading from response files: ", err.Error())
 	}
 
-	//initialize_sheet()
+	initialize_sheet()
 	initDb()
 	return config, resp_xml, errXml, main_page_xml, days_xml, vote_input_xml, err
 }
@@ -113,8 +113,8 @@ func voteInputHandler(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, string(errorXml), "Empty request!")
 		return
 	}
-	//log.Println(fmt.Sprintf(string(voteInputXml), config.ServerRoot, r.URL.Query().Get("match")))
-	fmt.Fprintf(w, string(voteInputXml), config.ServerRoot, r.URL.Query().Get("match"))
+	log.Println(fmt.Sprintf(string(voteInputXml), config.ServerRoot, r.URL.Query().Get("match"), config.ServerRoot))
+	fmt.Fprintf(w, string(voteInputXml), config.ServerRoot, r.URL.Query().Get("match"), config.ServerRoot)
 }
 
 func voteHandler(w http.ResponseWriter, r *http.Request){
@@ -127,13 +127,24 @@ func voteHandler(w http.ResponseWriter, r *http.Request){
 	matchNum := r.URL.Query().Get("match")
 	scoreFromUri := r.URL.Query().Get("score")
 	//DONE: check regex here
-	if res, _ := regexp.MatchString("^([0-9]+):([0-9]+)$", scoreFromUri); res {
+	log.Println("Score: "+scoreFromUri)
+	var scoreTemplate = regexp.MustCompile("\\d{1}\\s*(:|\\-)\\s*\\d{1}")
+	log.Println("find string output: "+scoreTemplate.FindString(scoreFromUri))
+	if scoreTemplate.FindString(scoreFromUri) != "" {
 		//
-		score := strings.Split(scoreFromUri, ":")
+		scoreFromUri = scoreTemplate.FindString(scoreFromUri)
+		score:=[]string{}
+		if strings.Contains(scoreFromUri, ":") {
+			score = strings.Split(scoreFromUri, ":")
+		}else {
+			score = strings.Split(scoreFromUri, "-")
+		}
 		go addVote(matchNum, wnumber, score[0], score[1])
-		fmt.Fprintf(w,string(responseXml),"Thank you for participating!!")
+		//fmt.Fprintf(w,string(responseXml),"Thank you for participating!!")
+		fmt.Fprintf(w, string(mainPageXml), config.ServerRoot, config.ServerRoot)
 	}else{
-		fmt.Fprintf(w,string(responseXml), "Invalid score format!")
+		//fmt.Fprintf(w,string(responseXml), "Invalid score format!")
+		fmt.Fprintf(w, string(voteInputXml), config.ServerRoot, matchNum, config.ServerRoot)
 	}
 }
 
@@ -144,7 +155,7 @@ func resultHandler(w http.ResponseWriter, r *http.Request){
 		return
 	}
 	wnumber := r.URL.Query().Get("wnumber")
-	fmt.Fprintf(w, formResultXml(getWonResults(wnumber)))
+	fmt.Fprintf(w, formResultXml(getWonResults(wnumber), countUserVotes(wnumber)))
 }
 func parseUpdErr(err string) (string) {
 	out := "Google sheet plugin error: "
@@ -168,7 +179,8 @@ func updateResultHandler(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, "ERROR: %s", "Invalid key!")
 		return
 	}
-	spreadsheetId := r.URL.Query().Get("spreadheetId")
+	spreadsheetId := r.URL.Query().Get("spreadsheetId")
+	log.Println("Id: ",spreadsheetId)
 	updErr := updSheet(spreadsheetId) // Id of spreadsheet should be passed in "spreadsheetId" parameter
 	if updErr != nil {
 		fmt.Fprintf(w, parseUpdErr(string(updErr.Error())))

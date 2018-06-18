@@ -3,9 +3,12 @@
         <input
                 navigationId="submit"
                 name="score"
-                title="Please enter score in format (Command A score):(Command B score)"/>
+                title="Give the game forecast as X:Y(For example: 1:0 or 3:3). You may give only one result!"/>
     </div>
     <navigation id="submit">
         <link pageId="%svote?match=%s">vote</link>
+    </navigation>
+    <navigation>
+        <link pageId="%s">Main menu</link>
     </navigation>
 </page>

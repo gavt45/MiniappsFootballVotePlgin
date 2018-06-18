@@ -92,7 +92,7 @@ func getAllMatchesByDay(day int)([]Match){
 
 func updateMatches(matches []Match){
 	if len(matches) == 0{return}
-	stmt, err := database.Prepare("DELETE * FROM matches")
+	stmt, err := database.Prepare("DELETE FROM matches")
 	log.Println("Db api err: ",err)
 	stmt.Exec()
 	for _, match := range matches{
@@ -102,14 +102,28 @@ func updateMatches(matches []Match){
 	}
 }
 
+func countUserVotes(wnumber string)(int){
+	out := 0
+	rows, err := database.Query("SELECT number FROM votes WHERE wnumber='"+wnumber+"'")//select matches.number,matches.com1,matches.com2,matches.date from matches where date="+strconv.Itoa(day))//"select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	log.Println("Db api err: ",err)
+	//var idx int
+	var number int
+	for rows.Next() {
+		rows.Scan(&number)
+		//log.Println("Teams for user "+wnumber+" and date ",date,": ",com1," ",com2)
+		out+=1
+	}
+	return out
+}
+
 func getMatches(wnumber string, date int)([]Match){
 	out := []Match{}
 	if !initialized {return out}
 	if countVotedMatches(wnumber,date) == 0{
 		return getAllMatchesByDay(date)
 	}
-	//log.Println("Query: "+"select matches.number,com1,com2 from matches,votes where votes.wnumber='"+wnumber+"' and matches.number<>votes.number and matches.date="+strconv.Itoa(date))
-	rows, err := database.Query("select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	log.Println("Query: "+"select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	rows, err := database.Query("select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and matches.number not in (select matches.number from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number)")//"select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
 	log.Println("Db api err: ",err)
 	var idx int
 	var com1 string
