@@ -1,0 +1,11 @@
+{
+  "serverRoot": "/",
+  "port": "8800",
+  "mainPageXML": "./xml/mainPage.xml",
+  "responseXML": "./xml/response.xml",
+  "errorXML": "./xml/error.xml",
+  "daysXML": "./xml/days.xml",
+  "voteInputXML": "./xml/voteInput.xml",
+  "dbPath": "./football.db",
+  "pathToGoogleKeyJson": "D:\\passwords\\google_key\\MiniappsTesterBot-e3f1e1953eda.json"
+}

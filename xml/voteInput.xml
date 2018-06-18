@@ -1,0 +1,11 @@
+<page version="2.0">
+    <div>
+        <input
+                navigationId="submit"
+                name="score"
+                title="Please enter score in format (Command A score):(Command B score)"/>
+    </div>
+    <navigation id="submit">
+        <link pageId="%svote?match=%s">vote</link>
+    </navigation>
+</page>

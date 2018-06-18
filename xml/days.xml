@@ -1,0 +1,4 @@
+<page version="2.0">
+    <div>Please, select day: </div>
+    <navigation>%s</navigation>
+</page>
