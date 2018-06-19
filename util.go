@@ -1,9 +1,14 @@
 package main
 
-import "time"
+import (
+	"time"
+	"log"
+)
 
 func selectAllLargerThen(val time.Time, arr []time.Time)([]time.Time){
 	o:=[]time.Time{}
+	log.Println("ALT: val: ",val)
+	log.Println("ALT: arr: ",arr)
 	for _,e := range arr{
 		if e.After(val) {
 			o=append(o, e)
@@ -49,5 +54,6 @@ func dateToString(t time.Time)(string){
 func stringToDate(date string)(time.Time, error){
 	//layout := "DD-MM-YYYY hh:mm:ss"
 	//return time.Parse(layout, date)
+	log.Println("str2date date: ",date)
 	return time.Parse("_2.01", date)
 }

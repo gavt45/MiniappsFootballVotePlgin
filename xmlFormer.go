@@ -4,15 +4,20 @@ import (
 	"fmt"
 	"strconv"
 	"time"
+	"log"
 )
 
 func formVoteXml(dates []time.Time)(string){
 	navigation := ""
 	for _,day := range dates{
-		navigation+=fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"matches?day="+dateToString(day), strconv.Itoa(day.Day())+"."+day.Month().String())
+		if int(day.Month()) < 10 {
+			navigation += fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"matches?day="+dateToString(day), strconv.Itoa(day.Day())+".0"+strconv.Itoa(int(day.Month())))
+		}else {
+			navigation += fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"matches?day="+dateToString(day), strconv.Itoa(day.Day())+"."+strconv.Itoa(int(day.Month())))
+		}
 	}
 	out := fmt.Sprintf(string(daysXml), navigation)
-	//log.Println("Vote xml: "+out
+	log.Println("Vote xml: "+out)
 	return out
 }
 
