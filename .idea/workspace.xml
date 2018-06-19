@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e734869f-25d8-4d54-b113-a89615658276" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dbApi.go" afterPath="$PROJECT_DIR$/dbApi.go" />
-      <change beforePath="$PROJECT_DIR$/football.db" afterPath="$PROJECT_DIR$/football.db" />
-      <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
-      <change beforePath="$PROJECT_DIR$/xml/mainPage.xml" afterPath="$PROJECT_DIR$/xml/mainPage.xml" />
-      <change beforePath="$PROJECT_DIR$/xml/voteInput.xml" afterPath="$PROJECT_DIR$/xml/voteInput.xml" />
       <change beforePath="$PROJECT_DIR$/xmlFormer.go" afterPath="$PROJECT_DIR$/xmlFormer.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="139" column="50" lean-forward="false" selection-start-line="139" selection-start-column="50" selection-end-line="139" selection-end-column="50" />
+            <state relative-caret-position="1385">
+              <caret line="222" column="68" lean-forward="false" selection-start-line="222" selection-start-column="68" selection-end-line="222" selection-end-column="68" />
               <folding>
                 <element signature="e#14#126#0" expanded="true" />
               </folding>
@@ -73,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbApi.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dbApi.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dbApi.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="589">
@@ -124,8 +119,8 @@
       <file leaf-file-name="xmlFormer.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmlFormer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
+            <state relative-caret-position="595">
+              <caret line="35" column="159" lean-forward="false" selection-start-line="35" selection-start-column="159" selection-end-line="35" selection-end-column="159" />
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -136,8 +131,8 @@
       <file leaf-file-name="mainPage.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xml/mainPage.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+            <state relative-caret-position="102">
+              <caret line="6" column="7" lean-forward="false" selection-start-line="1" selection-start-column="186" selection-end-line="6" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -231,10 +226,10 @@
         <option value="$PROJECT_DIR$/googleSheetsApi.go" />
         <option value="$PROJECT_DIR$/cfg.json" />
         <option value="$PROJECT_DIR$/xml/mainPage.xml" />
-        <option value="$PROJECT_DIR$/xmlFormer.go" />
         <option value="$PROJECT_DIR$/xml/voteInput.xml" />
         <option value="$PROJECT_DIR$/dbApi.go" />
         <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/xmlFormer.go" />
       </list>
     </option>
   </component>
@@ -365,7 +360,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32423925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32423925" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -387,7 +382,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update results from google sheet" />
-    <option name="LAST_COMMIT_MESSAGE" value="update results from google sheet" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -741,29 +737,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/xml/voteInput.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1385">
+          <caret line="222" column="68" lean-forward="false" selection-start-line="222" selection-start-column="68" selection-end-line="222" selection-end-column="68" />
+          <folding>
+            <element signature="e#14#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/xml/mainPage.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+        <state relative-caret-position="102">
+          <caret line="6" column="7" lean-forward="false" selection-start-line="1" selection-start-column="186" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmlFormer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
+        <state relative-caret-position="595">
+          <caret line="35" column="159" lean-forward="false" selection-start-line="35" selection-start-column="159" selection-end-line="35" selection-end-column="159" />
           <folding>
             <element signature="e#14#42#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/voteInput.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -799,16 +805,6 @@
             <marker date="1529324175981" expanded="true" signature="5305:5433" ph="select match... matches" />
             <marker date="1529324175981" expanded="true" signature="5305:5478" ph="select match... matches" />
             <marker date="1529324175981" expanded="true" signature="5919:5983" ph="SELECT match... matches" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="139" column="50" lean-forward="false" selection-start-line="139" selection-start-column="50" selection-end-line="139" selection-end-column="50" />
-          <folding>
-            <element signature="e#14#126#0" expanded="true" />
           </folding>
         </state>
       </provider>

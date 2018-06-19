@@ -31,9 +31,9 @@ func formMatchesXml(matches []Match)(string){
 	return out
 }
 func formResultXml(results []Result, voted int)(string){
-	//resp := ""
+	resp := "<page version=\"2.0\"><div>%s</div><navigation><link pageId=\"%sdays\">vote</link><link pageId=\"%sresult\">view results</link></navigation></page>"
 	//if len(results) == 0{
-	return fmt.Sprintf(string(responseXml), "❓you voted: "+strconv.Itoa(voted)+"<br/>👍 you guessed: "+strconv.Itoa(len(results)))
+	return fmt.Sprintf(string(resp), "❓you voted: "+strconv.Itoa(voted)+"<br/>👍 you guessed: "+strconv.Itoa(len(results)), config.ServerRoot, config.ServerRoot)
 	//}
 	/*
 	resp="You was right at:<br/>"
