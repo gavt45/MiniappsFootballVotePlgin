@@ -125,10 +125,15 @@ func voteHandler(w http.ResponseWriter, r *http.Request){
 	}
 	wnumber := r.URL.Query().Get("wnumber")
 	matchNum := r.URL.Query().Get("match")
+	matchNumInt, err := strconv.Atoi(matchNum)
+	if err != nil {
+		fmt.Fprintf(w, string(errorXml), "Internal error: invalid match num "+matchNum)
+		return
+	}
 	scoreFromUri := r.URL.Query().Get("score")
 	//DONE: check regex here
 	log.Println("Score: "+scoreFromUri)
-	var scoreTemplate = regexp.MustCompile("\\d{1}\\s*(:|\\-)\\s*\\d{1}")
+	var scoreTemplate = regexp.MustCompile("^\\d{1}\\s{0,1}(:|\\-)\\s{0,1}\\d{1}$")
 	log.Println("find string output: "+scoreTemplate.FindString(scoreFromUri))
 	if scoreTemplate.FindString(scoreFromUri) != "" {
 		//
@@ -141,7 +146,8 @@ func voteHandler(w http.ResponseWriter, r *http.Request){
 		}
 		go addVote(matchNum, wnumber, score[0], score[1])
 		//fmt.Fprintf(w,string(responseXml),"Thank you for participating!!")
-		fmt.Fprintf(w, string(mainPageXml), config.ServerRoot, config.ServerRoot)
+		match:=getMatchById(matchNumInt)
+		fmt.Fprintf(w, formVoteRespXml(match.team1+" vs "+match.team2, score[0]+":"+score[1]))
 	}else{
 		//fmt.Fprintf(w,string(responseXml), "Invalid score format!")
 		fmt.Fprintf(w, string(voteInputXml), config.ServerRoot, matchNum, config.ServerRoot)

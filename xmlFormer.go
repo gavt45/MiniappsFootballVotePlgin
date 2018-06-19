@@ -44,3 +44,8 @@ func formResultXml(results []Result, voted int)(string){
 	//log.Println("Result xml: "+out)
 	//return out
 }
+
+func formVoteRespXml(match string, score string)(string){
+	resp := "<page version=\"2.0\"><div>%s</div><navigation><link pageId=\"%sdays\">vote</link><link pageId=\"%sresult\">view results</link></navigation></page>"
+	return fmt.Sprintf(string(resp), "Thank you! Your forecast is accepted. "+match+" "+score, config.ServerRoot, config.ServerRoot)
+}

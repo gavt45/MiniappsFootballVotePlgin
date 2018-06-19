@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e734869f-25d8-4d54-b113-a89615658276" name="Default" comment="">
+    <list default="true" id="e734869f-25d8-4d54-b113-a89615658276" name="Default" comment="fixed result page">
+      <change beforePath="" afterPath="$PROJECT_DIR$/xml/anotherResponse.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/dbApi.go" afterPath="$PROJECT_DIR$/dbApi.go" />
+      <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
       <change beforePath="$PROJECT_DIR$/xmlFormer.go" afterPath="$PROJECT_DIR$/xmlFormer.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +32,31 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1385">
-              <caret line="222" column="68" lean-forward="false" selection-start-line="222" selection-start-column="68" selection-end-line="222" selection-end-column="68" />
+            <state relative-caret-position="600">
+              <caret line="149" column="27" lean-forward="false" selection-start-line="149" selection-start-column="27" selection-end-line="149" selection-end-column="27" />
               <folding>
                 <element signature="e#14#126#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xml/error.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="anotherResponse.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xml/anotherResponse.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,49 +81,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dateApi.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dateApi.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="dbApi.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dbApi.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="154" column="2" lean-forward="false" selection-start-line="154" selection-start-column="2" selection-end-line="154" selection-end-column="2" />
+            <state relative-caret-position="383">
+              <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
               <folding>
                 <element signature="e#14#90#0" expanded="true" />
-                <marker date="1529324175981" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
-                <marker date="1529324175981" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
-                <marker date="1529324175981" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
-                <marker date="1529324175981" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
-                <marker date="1529324175981" expanded="true" signature="908:962" ph="INSERT INTO people... " />
-                <marker date="1529324175981" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
-                <marker date="1529324175981" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
-                <marker date="1529324175981" expanded="true" signature="2109:2194" ph="select match... matches" />
-                <marker date="1529324175981" expanded="true" signature="2969:2988" ph="DELETE FROM matches... " />
-                <marker date="1529324175981" expanded="true" signature="3102:3129" ph="INSERT INTO matches... " />
-                <marker date="1529324175981" expanded="true" signature="3102:3225" ph="INSERT INTO matches... " />
-                <marker date="1529324175981" expanded="true" signature="3501:3541" ph="SELECT score... votes" />
-                <marker date="1529324175981" expanded="true" signature="3501:3553" ph="SELECT score... votes" />
-                <marker date="1529324175981" expanded="true" signature="4790:4899" ph="select disti... matches" />
-                <marker date="1529324175981" expanded="true" signature="4790:4941" ph="select disti... matches" />
-                <marker date="1529324175981" expanded="true" signature="4790:5129" ph="select disti... matches" />
-                <marker date="1529324175981" expanded="true" signature="4981:5128" ph="select match... matches" />
-                <marker date="1529324175981" expanded="true" signature="5134:5243" ph="select disti... matches" />
-                <marker date="1529324175981" expanded="true" signature="5134:5285" ph="select disti... matches" />
-                <marker date="1529324175981" expanded="true" signature="5134:5297" ph="select disti... matches" />
-                <marker date="1529324175981" expanded="true" signature="5134:5478" ph="select disti... " />
-                <marker date="1529324175981" expanded="true" signature="5134:5480" ph="select disti... " />
-                <marker date="1529324175981" expanded="true" signature="5305:5392" ph="select match... matches" />
-                <marker date="1529324175981" expanded="true" signature="5305:5433" ph="select match... matches" />
-                <marker date="1529324175981" expanded="true" signature="5305:5478" ph="select match... matches" />
-                <marker date="1529324175981" expanded="true" signature="5919:5983" ph="SELECT match... matches" />
+                <marker date="1529388712312" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
+                <marker date="1529388712312" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
+                <marker date="1529388712312" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
+                <marker date="1529388712312" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
+                <marker date="1529388712312" expanded="true" signature="908:962" ph="INSERT INTO people... " />
+                <marker date="1529388712312" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
+                <marker date="1529388712312" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
+                <marker date="1529388712312" expanded="true" signature="2494:2579" ph="select match... matches" />
+                <marker date="1529388712312" expanded="true" signature="3397:3416" ph="DELETE FROM matches... " />
+                <marker date="1529388712312" expanded="true" signature="3530:3557" ph="INSERT INTO matches... " />
+                <marker date="1529388712312" expanded="true" signature="3530:3653" ph="INSERT INTO matches... " />
+                <marker date="1529388712312" expanded="true" signature="3951:3991" ph="SELECT score... votes" />
+                <marker date="1529388712312" expanded="true" signature="3951:4003" ph="SELECT score... votes" />
+                <marker date="1529388712312" expanded="true" signature="5261:5370" ph="select disti... matches" />
+                <marker date="1529388712312" expanded="true" signature="5261:5412" ph="select disti... matches" />
+                <marker date="1529388712312" expanded="true" signature="5261:5600" ph="select disti... matches" />
+                <marker date="1529388712312" expanded="true" signature="5452:5599" ph="select match... matches" />
+                <marker date="1529388712312" expanded="true" signature="5605:5714" ph="select disti... matches" />
+                <marker date="1529388712312" expanded="true" signature="5605:5756" ph="select disti... matches" />
+                <marker date="1529388712312" expanded="true" signature="5605:5768" ph="select disti... matches" />
+                <marker date="1529388712312" expanded="true" signature="5605:5949" ph="select disti... " />
+                <marker date="1529388712312" expanded="true" signature="5605:5951" ph="select disti... " />
+                <marker date="1529388712312" expanded="true" signature="5776:5863" ph="select match... matches" />
+                <marker date="1529388712312" expanded="true" signature="5776:5904" ph="select match... matches" />
+                <marker date="1529388712312" expanded="true" signature="5776:5949" ph="select match... matches" />
+                <marker date="1529388712312" expanded="true" signature="6432:6496" ph="SELECT match... matches" />
               </folding>
             </state>
           </provider>
@@ -119,8 +132,8 @@
       <file leaf-file-name="xmlFormer.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmlFormer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="159" lean-forward="false" selection-start-line="35" selection-start-column="159" selection-end-line="35" selection-end-column="159" />
+            <state relative-caret-position="735">
+              <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
                 <element signature="e#14#42#0" expanded="true" />
               </folding>
@@ -132,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/xml/mainPage.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="7" lean-forward="false" selection-start-line="1" selection-start-column="186" selection-end-line="6" selection-end-column="7" />
+              <caret line="6" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -146,16 +159,6 @@
               <folding>
                 <element signature="e#14#199#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cfg.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cfg.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -227,9 +230,10 @@
         <option value="$PROJECT_DIR$/cfg.json" />
         <option value="$PROJECT_DIR$/xml/mainPage.xml" />
         <option value="$PROJECT_DIR$/xml/voteInput.xml" />
+        <option value="$PROJECT_DIR$/xml/anotherResponse.xml" />
+        <option value="$PROJECT_DIR$/xmlFormer.go" />
         <option value="$PROJECT_DIR$/dbApi.go" />
         <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/xmlFormer.go" />
       </list>
     </option>
   </component>
@@ -240,9 +244,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
-    <option name="height" value="1050" />
+    <option name="x" value="260" />
+    <option name="y" value="25" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -383,7 +388,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update results from google sheet" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="fixed result page" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed result page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -466,32 +472,32 @@
           <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="30" />
           <folding>
             <element signature="e#14#90#0" expanded="true" />
-            <marker date="1529324175981" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
-            <marker date="1529324175981" expanded="true" signature="908:962" ph="INSERT INTO people... " />
-            <marker date="1529324175981" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
-            <marker date="1529324175981" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
-            <marker date="1529324175981" expanded="true" signature="2109:2194" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="2969:2988" ph="DELETE FROM matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3129" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3225" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3501:3541" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="3501:3553" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="4790:4899" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:4941" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:5129" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4981:5128" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5243" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5285" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5297" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5478" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5134:5480" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5305:5392" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5433" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5478" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5919:5983" ph="SELECT match... matches" />
+            <marker date="1529388712312" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
+            <marker date="1529388712312" expanded="true" signature="908:962" ph="INSERT INTO people... " />
+            <marker date="1529388712312" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
+            <marker date="1529388712312" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
+            <marker date="1529388712312" expanded="true" signature="2494:2579" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="3397:3416" ph="DELETE FROM matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3557" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3653" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3951:3991" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="3951:4003" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="5261:5370" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5412" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5600" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5452:5599" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5714" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5756" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5768" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5949" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5605:5951" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5776:5863" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5904" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5949" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="6432:6496" ph="SELECT match... matches" />
           </folding>
         </state>
       </provider>
@@ -520,32 +526,32 @@
           <caret line="116" column="41" lean-forward="false" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding>
             <element signature="e#14#90#0" expanded="true" />
-            <marker date="1529324175981" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
-            <marker date="1529324175981" expanded="true" signature="908:962" ph="INSERT INTO people... " />
-            <marker date="1529324175981" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
-            <marker date="1529324175981" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
-            <marker date="1529324175981" expanded="true" signature="2109:2194" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="2969:2988" ph="DELETE FROM matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3129" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3225" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3501:3541" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="3501:3553" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="4790:4899" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:4941" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:5129" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4981:5128" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5243" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5285" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5297" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5478" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5134:5480" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5305:5392" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5433" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5478" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5919:5983" ph="SELECT match... matches" />
+            <marker date="1529388712312" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
+            <marker date="1529388712312" expanded="true" signature="908:962" ph="INSERT INTO people... " />
+            <marker date="1529388712312" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
+            <marker date="1529388712312" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
+            <marker date="1529388712312" expanded="true" signature="2494:2579" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="3397:3416" ph="DELETE FROM matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3557" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3653" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3951:3991" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="3951:4003" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="5261:5370" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5412" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5600" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5452:5599" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5714" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5756" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5768" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5949" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5605:5951" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5776:5863" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5904" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5949" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="6432:6496" ph="SELECT match... matches" />
           </folding>
         </state>
       </provider>
@@ -600,32 +606,32 @@
           <caret line="116" column="41" lean-forward="false" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding>
             <element signature="e#14#90#0" expanded="true" />
-            <marker date="1529324175981" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
-            <marker date="1529324175981" expanded="true" signature="908:962" ph="INSERT INTO people... " />
-            <marker date="1529324175981" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
-            <marker date="1529324175981" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
-            <marker date="1529324175981" expanded="true" signature="2109:2194" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="2969:2988" ph="DELETE FROM matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3129" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3225" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3501:3541" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="3501:3553" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="4790:4899" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:4941" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:5129" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4981:5128" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5243" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5285" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5297" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5478" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5134:5480" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5305:5392" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5433" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5478" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5919:5983" ph="SELECT match... matches" />
+            <marker date="1529388712312" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
+            <marker date="1529388712312" expanded="true" signature="908:962" ph="INSERT INTO people... " />
+            <marker date="1529388712312" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
+            <marker date="1529388712312" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
+            <marker date="1529388712312" expanded="true" signature="2494:2579" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="3397:3416" ph="DELETE FROM matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3557" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3653" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3951:3991" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="3951:4003" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="5261:5370" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5412" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5600" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5452:5599" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5714" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5756" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5768" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5949" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5605:5951" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5776:5863" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5904" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5949" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="6432:6496" ph="SELECT match... matches" />
           </folding>
         </state>
       </provider>
@@ -675,14 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/error.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -745,66 +743,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1385">
-          <caret line="222" column="68" lean-forward="false" selection-start-line="222" selection-start-column="68" selection-end-line="222" selection-end-column="68" />
-          <folding>
-            <element signature="e#14#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xml/mainPage.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="1" selection-start-column="186" selection-end-line="6" selection-end-column="7" />
+          <caret line="6" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/anotherResponse.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/error.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xmlFormer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="159" lean-forward="false" selection-start-line="35" selection-start-column="159" selection-end-line="35" selection-end-column="159" />
+        <state relative-caret-position="735">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
           <folding>
             <element signature="e#14#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="149" column="27" lean-forward="false" selection-start-line="149" selection-start-column="27" selection-end-line="149" selection-end-column="27" />
+          <folding>
+            <element signature="e#14#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dbApi.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="154" column="2" lean-forward="false" selection-start-line="154" selection-start-column="2" selection-end-line="154" selection-end-column="2" />
+        <state relative-caret-position="383">
+          <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
           <folding>
             <element signature="e#14#90#0" expanded="true" />
-            <marker date="1529324175981" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
-            <marker date="1529324175981" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
-            <marker date="1529324175981" expanded="true" signature="908:962" ph="INSERT INTO people... " />
-            <marker date="1529324175981" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
-            <marker date="1529324175981" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
-            <marker date="1529324175981" expanded="true" signature="2109:2194" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="2969:2988" ph="DELETE FROM matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3129" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3102:3225" ph="INSERT INTO matches... " />
-            <marker date="1529324175981" expanded="true" signature="3501:3541" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="3501:3553" ph="SELECT score... votes" />
-            <marker date="1529324175981" expanded="true" signature="4790:4899" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:4941" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4790:5129" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="4981:5128" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5243" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5285" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5297" ph="select disti... matches" />
-            <marker date="1529324175981" expanded="true" signature="5134:5478" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5134:5480" ph="select disti... " />
-            <marker date="1529324175981" expanded="true" signature="5305:5392" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5433" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5305:5478" ph="select match... matches" />
-            <marker date="1529324175981" expanded="true" signature="5919:5983" ph="SELECT match... matches" />
+            <marker date="1529388712312" expanded="true" signature="597:614" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:622" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="597:674" ph="INSERT INTO votes... " />
+            <marker date="1529388712312" expanded="true" signature="760:849" ph="CREATE TABLE... IF" />
+            <marker date="1529388712312" expanded="true" signature="908:962" ph="INSERT INTO people... " />
+            <marker date="1529388712312" expanded="true" signature="1031:1073" ph="SELECT id, f... people" />
+            <marker date="1529388712312" expanded="true" signature="1365:1397" ph="SELECT id FR... people" />
+            <marker date="1529388712312" expanded="true" signature="2494:2579" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="3397:3416" ph="DELETE FROM matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3557" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3530:3653" ph="INSERT INTO matches... " />
+            <marker date="1529388712312" expanded="true" signature="3951:3991" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="3951:4003" ph="SELECT score... votes" />
+            <marker date="1529388712312" expanded="true" signature="5261:5370" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5412" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5261:5600" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5452:5599" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5714" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5756" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5768" ph="select disti... matches" />
+            <marker date="1529388712312" expanded="true" signature="5605:5949" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5605:5951" ph="select disti... " />
+            <marker date="1529388712312" expanded="true" signature="5776:5863" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5904" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="5776:5949" ph="select match... matches" />
+            <marker date="1529388712312" expanded="true" signature="6432:6496" ph="SELECT match... matches" />
           </folding>
         </state>
       </provider>

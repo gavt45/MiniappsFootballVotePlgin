@@ -1,0 +1,7 @@
+<page version="2.0">
+    <div>Hello!<br/>I'm a KIRIK bot to vote at the 2018 FIFA World Cup.<br/>You can win a prize by guessing the results of matches. For details, see the group https://t.me/kirik_protocol</div>
+    <navigation>
+        <link pageId="%sdays">vote</link>
+        <link pageId="%sresult">view results</link>
+    </navigation>
+</page>
