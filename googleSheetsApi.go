@@ -97,6 +97,32 @@ func updateWinners(id string, winners []Winner){
 	log.Println("Updated!")
 }
 
+func getResults(id string)([]Result, error){
+	spresheet, err := service.FetchSpreadsheet(id)
+	if err != nil{
+		checkError(err)
+		return []Result{},errors.New("Error loading page: "+err.Error())
+	}
+	sheet, err := spresheet.SheetByIndex(1)
+	checkError(err)
+	err = sheet.Synchronize()
+	checkError(err)
+	log.Println("sheet ok.")
+	out := []Result{}
+	lastRowId := getEmptyRow(sheet)
+	for i:=1; i<lastRowId; i++{
+		idx, err := strconv.Atoi(sheet.Rows[i][0].Value)
+		//date, err := stringToDate(sheet.Rows[i][3].Value)
+		if err == nil {
+			out = append(out, Result{idx:idx, teamA:sheet.Rows[i][1].Value, teamB:sheet.Rows[i][2].Value})
+		}else{
+			return []Result{}, errors.New("Invalid match index: "+sheet.Rows[i][0].Value)
+		}
+	}
+	log.Println("Results: ",out,err)
+	return out, nil
+}
+
 func checkWinnersHeader(sheet *spreadsheet.Sheet)(bool){
 	if len(sheet.Rows[0]) < 5 {
 		return false

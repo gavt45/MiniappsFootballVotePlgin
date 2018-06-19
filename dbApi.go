@@ -9,6 +9,7 @@ _ "github.com/mattn/go-sqlite3"
 )
 
 type Result struct {
+	idx int
 	teamA string
 	teamB string
 }
@@ -131,6 +132,18 @@ func updateMatches(matches []Match){
 	for _, match := range matches{
 		stmt, err := database.Prepare("INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', '"+dateToString(match.date)+"')") //TODO: fix date here
 		log.Println("Adding entry: "+"INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', '"+dateToString(match.date)+"')"+" err: ",err)
+		stmt.Exec()
+	}
+}
+
+func updateResults(results []Result){
+	if len(results) == 0{return}
+	stmt, err := database.Prepare("DELETE FROM results")
+	log.Println("Db api err: ",err)
+	stmt.Exec()
+	for _, result := range results{
+		stmt, err := database.Prepare("INSERT INTO results VALUES("+strconv.Itoa(result.idx)+", '"+result.teamA+"', '"+result.teamB+"')") //TODO: fix date here
+		log.Println("Adding entry: "+"INSERT INTO results VALUES("+strconv.Itoa(result.idx)+", '"+result.teamA+"', '"+result.teamB+"')"+" err: ",err)
 		stmt.Exec()
 	}
 }

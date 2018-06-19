@@ -174,7 +174,7 @@ func parseUpdErr(err string) (string) {
 	}
 	return out
 }
-func updateResultHandler(w http.ResponseWriter, r *http.Request){
+func updateMatchesHandler(w http.ResponseWriter, r *http.Request){
 	log.Println("Got request:", r.URL.String(), "\nContent: ", r.Body)
 	if len(r.URL.Query()) == 0 {
 		fmt.Fprintf(w, "ERROR: %s", "Empty request!")
@@ -228,6 +228,31 @@ func updateWinnersHandler(w http.ResponseWriter, r *http.Request){
 	fmt.Fprintf(w, "Updating...")
 }
 
+func updateResultsHandler(w http.ResponseWriter, r *http.Request){
+	log.Println("Got request:", r.URL.String(), "\nContent: ", r.Body)
+	if len(r.URL.Query()) == 0 {
+		fmt.Fprintf(w, "ERROR: %s", "Empty request!")
+		return
+	}
+	key:=r.URL.Query().Get("key")
+	if key != config.UpdateResultsKey{
+		fmt.Fprintf(w, "ERROR: %s", "Invalid key!")
+		return
+	}
+	spreadsheetId := r.URL.Query().Get("spreadsheetId")
+	log.Println("Id: ",spreadsheetId)
+	results, err := getResults(spreadsheetId)
+	if err != nil {
+		fmt.Fprintf(w, "ERROR: %s", "Error getting matches from sheet:",err)
+		return
+	}else if len(results) == 0{
+		fmt.Fprintf(w, "ERROR: %s", "Matches length is empty!")
+		return
+	}
+	go updateResults(results)
+	fmt.Fprintf(w, "Updating...")
+}
+
 func main() {
 	log.Println("Starting...")
 	if len(os.Args) < 2 {
@@ -255,6 +280,7 @@ func main() {
 	http.HandleFunc(config.ServerRoot+"vote", voteHandler)
 	http.HandleFunc(config.ServerRoot+"result", resultHandler)
 	http.HandleFunc(config.ServerRoot+"updateWinners", updateWinnersHandler)
-	http.HandleFunc(config.ServerRoot+"updateResults", updateResultHandler)
+	http.HandleFunc(config.ServerRoot+"updateMatches", updateMatchesHandler)
+	http.HandleFunc(config.ServerRoot+"updateResults", updateResultsHandler)
 	http.ListenAndServe(":"+config.Port, nil)
 }

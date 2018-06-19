@@ -29,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="226" column="11" lean-forward="false" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
+            <state relative-caret-position="675">
+              <caret line="251" column="29" lean-forward="false" selection-start-line="251" selection-start-column="29" selection-end-line="251" selection-end-column="29" />
               <folding>
                 <element signature="e#14#126#0" expanded="true" />
               </folding>
@@ -76,12 +76,13 @@
       <file leaf-file-name="dbApi.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbApi.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="263" column="18" lean-forward="false" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="18" />
+            <state relative-caret-position="427">
+              <caret line="145" column="57" lean-forward="false" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
               <folding>
-                <marker date="1529399305300" expanded="true" signature="1483:1515" ph="select match... matches" />
-                <marker date="1529399305300" expanded="true" signature="3757:3776" ph="DELETE FROM matches... " />
-                <marker date="1529399305300" expanded="true" signature="9219:9452" ph="select votes... matches" />
+                <marker date="1529405355213" expanded="true" signature="1492:1524" ph="select match... matches" />
+                <marker date="1529405355213" expanded="true" signature="3766:3785" ph="DELETE FROM matches... " />
+                <marker date="1529405355213" expanded="true" signature="4342:4361" ph="DELETE FROM results... " />
+                <marker date="1529405355213" expanded="true" signature="9747:9980" ph="select votes... matches" />
               </folding>
             </state>
           </provider>
@@ -127,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="googleSheetsApi.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="googleSheetsApi.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+            <state relative-caret-position="460">
+              <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
               <folding>
                 <element signature="e#14#199#0" expanded="true" />
               </folding>
@@ -218,9 +219,9 @@
         <option value="$PROJECT_DIR$/util.go" />
         <option value="$PROJECT_DIR$/dateApi.go" />
         <option value="$PROJECT_DIR$/xmlFormer.go" />
-        <option value="$PROJECT_DIR$/dbApi.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/googleSheetsApi.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/dbApi.go" />
       </list>
     </option>
   </component>
@@ -392,7 +393,8 @@
     <MESSAGE value="fixed vote ending response" />
     <MESSAGE value="untested date fix" />
     <MESSAGE value="tested date fix (only day and month)" />
-    <option name="LAST_COMMIT_MESSAGE" value="tested date fix (only day and month)" />
+    <MESSAGE value="tested update winners from sheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested update winners from sheet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -503,9 +505,10 @@
         <state relative-caret-position="383">
           <caret line="73" column="14" lean-forward="true" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
           <folding>
-            <marker date="1529399305300" expanded="true" signature="1483:1515" ph="select match... matches" />
-            <marker date="1529399305300" expanded="true" signature="3757:3776" ph="DELETE FROM matches... " />
-            <marker date="1529399305300" expanded="true" signature="9219:9452" ph="select votes... matches" />
+            <marker date="1529405355213" expanded="true" signature="1492:1524" ph="select match... matches" />
+            <marker date="1529405355213" expanded="true" signature="3766:3785" ph="DELETE FROM matches... " />
+            <marker date="1529405355213" expanded="true" signature="4342:4361" ph="DELETE FROM results... " />
+            <marker date="1529405355213" expanded="true" signature="9747:9980" ph="select votes... matches" />
           </folding>
         </state>
       </provider>
@@ -580,9 +583,10 @@
         <state relative-caret-position="51">
           <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="30" />
           <folding>
-            <marker date="1529399305300" expanded="true" signature="1483:1515" ph="select match... matches" />
-            <marker date="1529399305300" expanded="true" signature="3757:3776" ph="DELETE FROM matches... " />
-            <marker date="1529399305300" expanded="true" signature="9219:9452" ph="select votes... matches" />
+            <marker date="1529405355213" expanded="true" signature="1492:1524" ph="select match... matches" />
+            <marker date="1529405355213" expanded="true" signature="3766:3785" ph="DELETE FROM matches... " />
+            <marker date="1529405355213" expanded="true" signature="4342:4361" ph="DELETE FROM results... " />
+            <marker date="1529405355213" expanded="true" signature="9747:9980" ph="select votes... matches" />
           </folding>
         </state>
       </provider>
@@ -609,9 +613,10 @@
         <state relative-caret-position="1887">
           <caret line="116" column="41" lean-forward="false" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding>
-            <marker date="1529399305300" expanded="true" signature="1483:1515" ph="select match... matches" />
-            <marker date="1529399305300" expanded="true" signature="3757:3776" ph="DELETE FROM matches... " />
-            <marker date="1529399305300" expanded="true" signature="9219:9452" ph="select votes... matches" />
+            <marker date="1529405355213" expanded="true" signature="1492:1524" ph="select match... matches" />
+            <marker date="1529405355213" expanded="true" signature="3766:3785" ph="DELETE FROM matches... " />
+            <marker date="1529405355213" expanded="true" signature="4342:4361" ph="DELETE FROM results... " />
+            <marker date="1529405355213" expanded="true" signature="9747:9980" ph="select votes... matches" />
           </folding>
         </state>
       </provider>
@@ -661,9 +666,10 @@
         <state relative-caret-position="1887">
           <caret line="116" column="41" lean-forward="false" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
           <folding>
-            <marker date="1529399305300" expanded="true" signature="1483:1515" ph="select match... matches" />
-            <marker date="1529399305300" expanded="true" signature="3757:3776" ph="DELETE FROM matches... " />
-            <marker date="1529399305300" expanded="true" signature="9219:9452" ph="select votes... matches" />
+            <marker date="1529405355213" expanded="true" signature="1492:1524" ph="select match... matches" />
+            <marker date="1529405355213" expanded="true" signature="3766:3785" ph="DELETE FROM matches... " />
+            <marker date="1529405355213" expanded="true" signature="4342:4361" ph="DELETE FROM results... " />
+            <marker date="1529405355213" expanded="true" signature="9747:9980" ph="select votes... matches" />
           </folding>
         </state>
       </provider>
@@ -797,32 +803,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dbApi.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="263" column="18" lean-forward="false" selection-start-line="263" selection-start-column="18" selection-end-line="263" selection-end-column="18" />
+        <state relative-caret-position="427">
+          <caret line="145" column="57" lean-forward="false" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="57" />
           <folding>
-            <marker date="1529399305300" expanded="true" signature="1483:1515" ph="select match... matches" />
-            <marker date="1529399305300" expanded="true" signature="3757:3776" ph="DELETE FROM matches... " />
-            <marker date="1529399305300" expanded="true" signature="9219:9452" ph="select votes... matches" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
-          <folding>
-            <element signature="e#14#199#0" expanded="true" />
+            <marker date="1529405355213" expanded="true" signature="1492:1524" ph="select match... matches" />
+            <marker date="1529405355213" expanded="true" signature="3766:3785" ph="DELETE FROM matches... " />
+            <marker date="1529405355213" expanded="true" signature="4342:4361" ph="DELETE FROM results... " />
+            <marker date="1529405355213" expanded="true" signature="9747:9980" ph="select votes... matches" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="226" column="11" lean-forward="false" selection-start-line="226" selection-start-column="11" selection-end-line="226" selection-end-column="11" />
+        <state relative-caret-position="675">
+          <caret line="251" column="29" lean-forward="false" selection-start-line="251" selection-start-column="29" selection-end-line="251" selection-end-column="29" />
           <folding>
             <element signature="e#14#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+          <folding>
+            <element signature="e#14#199#0" expanded="true" />
           </folding>
         </state>
       </provider>
