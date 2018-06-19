@@ -44,7 +44,7 @@ func getMatchesFromSheet()([]Match, error){
 		sheet.Update(0, 0, "idx")
 		sheet.Update(0, 1, "team1")
 		sheet.Update(0, 2, "team2")
-		sheet.Update(0, 2, "date")
+		sheet.Update(0, 3, "date")
 		return output, errors.New("Invalid matches table header!")
 	}
 	lastRowId := getEmptyRow(sheet)
@@ -62,6 +62,50 @@ func getMatchesFromSheet()([]Match, error){
 	}
 	return output,nil
 }
+
+func updateWinners(id string, winners []Winner){
+	spresheet, err := service.FetchSpreadsheet(id)
+	if err != nil{
+		checkError(err)
+		return
+	}
+	sheet, err := spresheet.SheetByIndex(0)
+	checkError(err)
+	err = sheet.Synchronize()
+	checkError(err)
+	log.Println("sheet ok.")
+	if !checkWinnersHeader(sheet){
+		sheet.Update(0, 0, "id")
+		sheet.Update(0, 1, "scoreA")
+		sheet.Update(0, 2, "scoreB")
+		sheet.Update(0, 3, "teamA")
+		sheet.Update(0, 4, "teamB")
+		//return output, errors.New("Invalid matches table header!")
+	}
+	log.Println("header ok.")
+	startRow := 1
+	for i, winner := range winners{
+		log.Println("upd: ",i,winner)
+		sheet.Update(i+startRow, 0, winner.wnumber)
+		sheet.Update(i+startRow, 1, strconv.Itoa(winner.score1))
+		sheet.Update(i+startRow, 2, strconv.Itoa(winner.score2))
+		sheet.Update(i+startRow, 3, winner.team1)
+		sheet.Update(i+startRow, 4, winner.team2)
+	}
+	err = sheet.Synchronize()
+	checkError(err)
+	log.Println("Updated!")
+}
+
+func checkWinnersHeader(sheet *spreadsheet.Sheet)(bool){
+	if len(sheet.Rows[0]) < 5 {
+		return false
+	} else if sheet.Rows[0][0].Value != "id" || sheet.Rows[0][1].Value != "scoreA" || sheet.Rows[0][2].Value != "scoreB" || sheet.Rows[0][3].Value != "teamA" || sheet.Rows[0][4].Value != "teamB" {
+		return false
+	}
+	return true
+}
+
 func checkMatchesHeader(sheet *spreadsheet.Sheet)(bool){
 	if len(sheet.Rows[0]) < 4 {
 		return false

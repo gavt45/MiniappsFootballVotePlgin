@@ -20,6 +20,14 @@ type Match struct {
 	date time.Time
 }
 
+type Winner struct {
+	wnumber string
+	score1 int
+	score2 int
+	team1 string
+	team2 string
+}
+
 var database=new(sql.DB)
 var initialized = false
 func initDb(){
@@ -243,3 +251,25 @@ func getWonResults(wnumber string)([]Result){
 	}
 	return out
 }
+
+func getAllWinners()([]Winner){
+	out := []Winner{}
+	//req := "select votes.wnumber,results.scoreA,results.scoreB,matches.com1,matches.com2 from matches,votes,results where votes.scoreA=results.scoreA and votes.scoreB=results.scoreB and votes.number=results.number and votes.number=matches.number"
+	rows, err := database.Query("select votes.wnumber,results.scoreA,results.scoreB,matches.com1,matches.com2 from matches,votes,results where votes.scoreA=results.scoreA and votes.scoreB=results.scoreB and votes.number=results.number and votes.number=matches.number")
+	log.Println("Db api err: ",err)
+	var wnumber string
+	var com1 string
+	var com2 string
+	var score1 int
+	var score2 int
+	for rows.Next() {
+		rows.Scan(&wnumber, &score1, &score2, &com1, &com2)
+		//log.Println("Teams for user "+wnumber+" and date ",date,": ",com1," ",com2)
+		if err != nil {
+			log.Println("ERROR: string to date error: ",err)
+		}
+		out=append(out, Winner{wnumber:wnumber, score1:score1, score2:score2, team1:com1, team2:com2})//TODO: fix date here
+	}
+	//log.Println("Out before remove double: ",out)
+	return out
+	}

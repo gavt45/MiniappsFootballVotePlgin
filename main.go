@@ -133,7 +133,7 @@ func voteHandler(w http.ResponseWriter, r *http.Request){
 	scoreFromUri := r.URL.Query().Get("score")
 	//DONE: check regex here
 	log.Println("Score: "+scoreFromUri)
-	var scoreTemplate = regexp.MustCompile("^\\d{1}\\s{0,1}(:|\\-)\\s{0,1}\\d{1}$")
+	var scoreTemplate = regexp.MustCompile("^\\d{1,2}\\s{0,1}(:|\\-)\\s{0,1}\\d{1,2}$")
 	log.Println("find string output: "+scoreTemplate.FindString(scoreFromUri))
 	if scoreTemplate.FindString(scoreFromUri) != "" {
 		//
@@ -203,6 +203,31 @@ func updateResultHandler(w http.ResponseWriter, r *http.Request){
 	go updateMatches(matches)
 	fmt.Fprintf(w, "Updating...")
 }
+
+func updateWinnersHandler(w http.ResponseWriter, r *http.Request){
+	log.Println("Got request:", r.URL.String(), "\nContent: ", r.Body)
+	if len(r.URL.Query()) == 0 {
+		fmt.Fprintf(w, "ERROR: %s", "Empty request!")
+		return
+	}
+	key:=r.URL.Query().Get("key")
+	if key != config.UpdateResultsKey{
+		fmt.Fprintf(w, "ERROR: %s", "Invalid key!")
+		return
+	}
+	spreadsheetId := r.URL.Query().Get("spreadsheetId")
+	log.Println("Id: ",spreadsheetId)
+	//updErr := updSheet(spreadsheetId) // Id of spreadsheet should be passed in "spreadsheetId" parameter
+	//if updErr != nil {
+	//	fmt.Fprintf(w, parseUpdErr(string(updErr.Error())))
+	//	return
+	//}
+	winners := getAllWinners()
+	log.Println("Winners: ",winners)
+	go updateWinners(spreadsheetId, winners)
+	fmt.Fprintf(w, "Updating...")
+}
+
 func main() {
 	log.Println("Starting...")
 	if len(os.Args) < 2 {
@@ -229,6 +254,7 @@ func main() {
 	http.HandleFunc(config.ServerRoot+"voteInput", voteInputHandler)
 	http.HandleFunc(config.ServerRoot+"vote", voteHandler)
 	http.HandleFunc(config.ServerRoot+"result", resultHandler)
+	http.HandleFunc(config.ServerRoot+"updateWinners", updateWinnersHandler)
 	http.HandleFunc(config.ServerRoot+"updateResults", updateResultHandler)
 	http.ListenAndServe(":"+config.Port, nil)
 }
