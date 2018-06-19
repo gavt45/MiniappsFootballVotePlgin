@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e734869f-25d8-4d54-b113-a89615658276" name="Default" comment="untested date">
+    <list default="true" id="e734869f-25d8-4d54-b113-a89615658276" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dbApi.go" afterPath="$PROJECT_DIR$/dbApi.go" />
-      <change beforePath="$PROJECT_DIR$/googleSheetsApi.go" afterPath="$PROJECT_DIR$/googleSheetsApi.go" />
-      <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
-      <change beforePath="$PROJECT_DIR$/util.go" afterPath="$PROJECT_DIR$/util.go" />
-      <change beforePath="$PROJECT_DIR$/xmlFormer.go" afterPath="$PROJECT_DIR$/xmlFormer.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -400,7 +395,8 @@
     <MESSAGE value="small fixes" />
     <MESSAGE value="fixed result page" />
     <MESSAGE value="fixed vote ending response" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed vote ending response" />
+    <MESSAGE value="untested date fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="untested date fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
