@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 )
 
-func formVoteXml(dates []int)(string){
+func formVoteXml(dates []time.Time)(string){
 	navigation := ""
 	for _,day := range dates{
-		navigation+=fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"matches?day="+strconv.Itoa(day), "june "+strconv.Itoa(day))
+		navigation+=fmt.Sprintf("<link pageId=\"%s\">%s</link>\n", config.ServerRoot+"matches?day="+dateToString(day), strconv.Itoa(day.Day())+"."+day.Month().String())
 	}
 	out := fmt.Sprintf(string(daysXml), navigation)
 	//log.Println("Vote xml: "+out

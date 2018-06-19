@@ -53,7 +53,7 @@ func getMatchesFromSheet()([]Match, error){
 		if err != nil {
 			return []Match{}, errors.New("Invalid match index: "+sheet.Rows[i][0].Value)
 		}
-		date, err := strconv.Atoi(sheet.Rows[i][3].Value)
+		date, err := stringToDate(sheet.Rows[i][3].Value)
 		if err == nil {
 			output = append(output, Match{idx: idx, team1: sheet.Rows[i][1].Value, team2: sheet.Rows[i][2].Value,date:date})
 		}else{

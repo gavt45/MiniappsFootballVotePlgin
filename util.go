@@ -1,26 +1,28 @@
 package main
 
-func selectAllLargerThen(val int, arr []int)([]int){
-	o:=[]int{}
+import "time"
+
+func selectAllLargerThen(val time.Time, arr []time.Time)([]time.Time){
+	o:=[]time.Time{}
 	for _,e := range arr{
-		if e > val {
+		if e.After(val) {
 			o=append(o, e)
 		}
 	}
 	return o
 }
 
-func intContains(val int, arr []int)(bool){
+func timeContains(val time.Time, arr []time.Time)(bool){
 	for _,e:=range arr{
 		if val==e{return true}
 	}
 	return false
 }
 
-func removeDublicates(in []int)([]int){
-	o:=[]int{}
+func removeDublicates(in []time.Time)([]time.Time){
+	o:=[]time.Time{}
 	for _,e := range in{
-		if !intContains(e,o){
+		if !timeContains(e,o){
 			o=append(o,e)
 		}
 	}
@@ -38,4 +40,14 @@ func allEquals(in []int)(bool){
 		}
 	}
 	return true
+}
+
+func dateToString(t time.Time)(string) {
+	return t.Format("2006-01-_2@15:04:05")
+}
+
+func stringToDate(date string)(time.Time, error){
+	//layout := "DD-MM-YYYY hh:mm:ss"
+	//return time.Parse(layout, date)
+	return time.Parse("2006-01-_2@15:04:05", date)
 }

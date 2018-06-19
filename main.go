@@ -72,9 +72,9 @@ func getMatchesHandler(w http.ResponseWriter, r *http.Request){
 	}
 	day:=r.URL.Query().Get("day")
 	wnumber := r.URL.Query().Get("wnumber")
-	intDay, err := strconv.Atoi(day)
+	intDay, err := stringToDate(day)
 	if err!=nil{
-		intDay = getNtp().Add(12*time.Hour).Day()
+		intDay = getNtp().Add(12*time.Hour)
 	}
 	matches := getMatches(wnumber, intDay)
 	//log.Println("Matches: ",matches)
@@ -89,7 +89,7 @@ func getDatesHandler(w http.ResponseWriter, r *http.Request){
 	}
 	//wnumber := r.URL.Query().Get("wnumber")
 	//log.Println("Days: ",getNtp().Day())
-	dates := removeDublicates(selectAllLargerThen(getNtp().Day(), getDates()))
+	dates := removeDublicates(selectAllLargerThen(getNtp().Add(12*time.Hour), getDates()))
 	fmt.Fprintf(w, formVoteXml(dates))
 }
 

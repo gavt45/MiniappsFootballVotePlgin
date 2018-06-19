@@ -5,6 +5,7 @@ _ "github.com/mattn/go-sqlite3"
 	"database/sql"
 	"log"
 	"strconv"
+	"time"
 )
 
 type Result struct {
@@ -16,7 +17,7 @@ type Match struct {
 	idx int
 	team1 string
 	team2 string
-	date int
+	date time.Time
 }
 
 var database=new(sql.DB)
@@ -46,16 +47,20 @@ func addVote(matchNum string, wnumber string, scoreA string, scoreB string) {
 		fmt.Println(strconv.Itoa(id) + ": " + firstname + " " + lastname)
 	}*/
 }
-func getDates()([]int){
-	out := []int{}
+func getDates()([]time.Time){
+	out := []time.Time{}
 	if !initialized {return out}
 	rows, err := database.Query("select matches.date from matches")
 	log.Println("Db api err: ",err)
-	var date int
+	var date string
 	for rows.Next() {
 		rows.Scan(&date)
 		//log.Println("Date: ",date)
-		out=append(out, date)
+		d,err:=stringToDate(date)
+		if err != nil {
+			log.Println("ERROR: string to date error: ",err)
+		}
+		out=append(out, d)
 	}
 	return out
 }
@@ -75,8 +80,8 @@ func getMatchById(matchNum int)(Match){
 }
 
 
-func countVotedMatches(wnumber string, date int)(int){
-	rows, err := database.Query("select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+func countVotedMatches(wnumber string, date time.Time)(int){
+	rows, err := database.Query("select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
 	log.Println("Db api err: ",err)
 	var i = 0
 	var idx int
@@ -90,18 +95,22 @@ func countVotedMatches(wnumber string, date int)(int){
 	return i
 	}
 
-func getAllMatchesByDay(day int)([]Match){
+func getAllMatchesByDay(matchDate time.Time)([]Match){
 	out:=[]Match{}
-	rows, err := database.Query("select matches.number,matches.com1,matches.com2,matches.date from matches where date="+strconv.Itoa(day))//TODO: fix date here //"select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	rows, err := database.Query("select matches.number,matches.com1,matches.com2,matches.date from matches where date='"+dateToString(matchDate)+"'")//TODO: fix date here //"select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
 	log.Println("Db api err: ",err)
 	var idx int
 	var com1 string
 	var com2 string
-	var date int
+	var date string
 	for rows.Next() {
 		rows.Scan(&idx, &com1, &com2, &date)
 		//log.Println("Teams for user "+wnumber+" and date ",date,": ",com1," ",com2)
-		out=append(out, Match{idx:idx, team1:com1, team2:com2, date:date})//TODO: fix date here
+		d, err := stringToDate(date)
+		if err != nil {
+			log.Println("ERROR: string to date error: ",err)
+		}
+		out=append(out, Match{idx:idx, team1:com1, team2:com2, date:d})//TODO: fix date here
 	}
 	return out
 }
@@ -112,15 +121,15 @@ func updateMatches(matches []Match){
 	log.Println("Db api err: ",err)
 	stmt.Exec()
 	for _, match := range matches{
-		stmt, err := database.Prepare("INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', "+strconv.Itoa(match.date)+")") //TODO: fix date here
-		log.Println("Adding entry: "+"INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', "+strconv.Itoa(match.date)+")"+" err: ",err)
+		stmt, err := database.Prepare("INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', '"+dateToString(match.date)+"')") //TODO: fix date here
+		log.Println("Adding entry: "+"INSERT INTO matches VALUES("+strconv.Itoa(match.idx)+", '"+match.team1+"', '"+match.team2+"', '"+dateToString(match.date)+"')"+" err: ",err)
 		stmt.Exec()
 	}
 }
 
 func countUserVotes(wnumber string)(int){
 	out := 0
-	rows, err := database.Query("SELECT number FROM votes WHERE wnumber='"+wnumber+"'")//select matches.number,matches.com1,matches.com2,matches.date from matches where date="+strconv.Itoa(day))//"select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	rows, err := database.Query("SELECT number FROM votes WHERE wnumber='"+wnumber+"'")//select matches.number,matches.com1,matches.com2,matches.date from matches where date="+strconv.Itoa(day))//"select distinct matches.number,matches.com1,matches.com2 from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
 	log.Println("Db api err: ",err)
 	//var idx int
 	var number int
@@ -132,23 +141,27 @@ func countUserVotes(wnumber string)(int){
 	return out
 }
 
-func getMatches(wnumber string, date int)([]Match){//TODO: fix date here
+func getMatches(wnumber string, date time.Time)([]Match){//TODO: fix date here
 	out := []Match{}
 	if !initialized {return out}
 	if countVotedMatches(wnumber,date) == 0{
 		return getAllMatchesByDay(date)
 	}
-	log.Println("Query: "+"select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
-	rows, err := database.Query("select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and matches.number not in (select matches.number from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number)")//"select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date="+strconv.Itoa(date)+" and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	log.Println("Query: "+"select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
+	rows, err := database.Query("select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' and matches.number not in (select matches.number from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' and votes.number=matches.number)")//"select distinct matches.number,matches.com1,matches.com2,matches.date from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' except select matches.number,matches.com1,matches.com2 from matches,votes where  matches.date='"+dateToString(date)+"' and votes.wnumber='"+wnumber+"' and votes.number=matches.number")
 	log.Println("Db api err: ",err)
 	var idx int
 	var com1 string
 	var com2 string
-	var matchDate int//TODO: fix date here
+	var matchDate string
 	for rows.Next() {
 		rows.Scan(&idx, &com1, &com2, &matchDate)
 		//log.Println("Teams for user "+wnumber+" and date ",date,": ",com1," ",com2)
-		out=append(out, Match{idx:idx, team1:com1, team2:com2, date:matchDate})//TODO: fix date here
+		d,err:= stringToDate(matchDate)
+		if err != nil {
+			log.Println("ERROR: string to date error: ",err)
+		}
+		out=append(out, Match{idx:idx, team1:com1, team2:com2, date:d})//TODO: fix date here
 	}
 	//log.Println("Out before remove double: ",out)
 	return out
