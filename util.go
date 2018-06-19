@@ -42,12 +42,12 @@ func allEquals(in []int)(bool){
 	return true
 }
 
-func dateToString(t time.Time)(string) {
-	return t.Format("2006-01-_2@15:04:05")
+func dateToString(t time.Time)(string){
+	return t.Format("_2.01")
 }
 
 func stringToDate(date string)(time.Time, error){
 	//layout := "DD-MM-YYYY hh:mm:ss"
 	//return time.Parse(layout, date)
-	return time.Parse("2006-01-_2@15:04:05", date)
+	return time.Parse("_2.01", date)
 }
