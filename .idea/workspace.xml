@@ -29,7 +29,7 @@
       <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="1428">
               <caret line="84" column="70" lean-forward="false" selection-start-line="84" selection-start-column="70" selection-end-line="84" selection-end-column="70" />
               <folding>
                 <element signature="e#14#126#0" expanded="true" />
@@ -81,8 +81,8 @@
       <file leaf-file-name="util.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/util.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+            <state relative-caret-position="500">
+              <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -121,7 +121,7 @@
       <file leaf-file-name="googleSheetsApi.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="935">
               <caret line="55" column="34" lean-forward="false" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
               <folding>
                 <element signature="e#14#199#0" expanded="true" />
@@ -162,11 +162,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="updateResultsFromSheet" />
+        <entry key="$PROJECT_DIR$" value="dateFix_day.month" />
       </map>
     </option>
     <push-targets>
       <push-target-info target-remote="origin" target-branch="dateFix" repo="$PROJECT_DIR$" source="master" />
+      <push-target-info target-remote="origin" target-branch="dateFix_day.month" repo="$PROJECT_DIR$" source="dateFix" />
     </push-targets>
     <favorite-branches>
       <branch-storage>
@@ -316,11 +317,12 @@
       <item index="1" class="java.lang.String" itemvalue="Go Build.go build main.go" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Go Build.go build main.go" />
         <item index="1" class="java.lang.String" itemvalue="Go Build.go build test.go" />
         <item index="2" class="java.lang.String" itemvalue="Go Build.go build main.go" />
         <item index="3" class="java.lang.String" itemvalue="Go Build.go build test.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -381,7 +383,8 @@
     <MESSAGE value="fixed result page" />
     <MESSAGE value="fixed vote ending response" />
     <MESSAGE value="untested date fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="untested date fix" />
+    <MESSAGE value="untested date fix(only day and month)" />
+    <option name="LAST_COMMIT_MESSAGE" value="untested date fix(only day and month)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -709,7 +712,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="1428">
           <caret line="84" column="70" lean-forward="false" selection-start-line="84" selection-start-column="70" selection-end-line="84" selection-end-column="70" />
           <folding>
             <element signature="e#14#126#0" expanded="true" />
@@ -775,7 +778,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="935">
           <caret line="55" column="34" lean-forward="false" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
           <folding>
             <element signature="e#14#199#0" expanded="true" />
@@ -785,8 +788,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="500">
+          <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
           <folding />
         </state>
       </provider>
