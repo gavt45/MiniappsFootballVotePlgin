@@ -37,9 +37,9 @@ func formMatchesXml(matches []Match)(string){
 	return out
 }
 func formResultXml(results []Result, voted int)(string){
-	resp := "<page version=\"2.0\"><div>%s</div><navigation><link pageId=\"%sdays\">vote</link><link pageId=\"%sresult\">view results</link></navigation></page>"
+	resp := "<page version=\"2.0\"><div>%s</div><navigation><link pageId=\"%sdays\">vote</link><link pageId=\"%sresult\">view results</link><link pageId=\"%sdetailedResult\">view detailed results</link></navigation></page>"
 	//if len(results) == 0{
-	return fmt.Sprintf(string(resp), "❓you voted: "+strconv.Itoa(voted)+"<br/>👍 you guessed: "+strconv.Itoa(len(results)), config.ServerRoot, config.ServerRoot)
+	return fmt.Sprintf(string(resp), "❓you voted: "+strconv.Itoa(voted)+"<br/>👍 you guessed: "+strconv.Itoa(len(results)), config.ServerRoot, config.ServerRoot, config.ServerRoot)
 	//}
 	/*
 	resp="You was right at:<br/>"
@@ -50,6 +50,20 @@ func formResultXml(results []Result, voted int)(string){
 	//log.Println("Result xml: "+out)
 	//return out
 }
+
+func formDetailedResultXml(results []DetailedResult)(string){
+	resp := "<page version=\"2.0\"><div>Your votes:<br/>"
+	for _, result := range results{
+		if result.realKnown {
+			resp += result.team1 + " vs " + result.team2 + " " + strconv.Itoa(result.vscoreA) + ":" + strconv.Itoa(result.vscoreB) + " real result " + strconv.Itoa(result.rscoreA) + ":" + strconv.Itoa(result.rscoreB)+"<br/>"
+		}else{
+			resp += result.team1 + " vs " + result.team2 + " " + strconv.Itoa(result.vscoreA) + ":" + strconv.Itoa(result.vscoreB) + " real result unknown<br/>"
+		}
+	}
+	resp+="</div><navigation><link pageId=\"%sdays\">vote</link><link pageId=\"%sr\">view results</link></navigation></page>"
+	return fmt.Sprintf(resp, config.ServerRoot, config.ServerRoot)
+}
+
 
 func formVoteRespXml(match string, score string)(string){
 	resp := "<page version=\"2.0\"><div>%s</div><navigation><link pageId=\"%sdays\">vote</link><link pageId=\"%sresult\">view results</link></navigation></page>"

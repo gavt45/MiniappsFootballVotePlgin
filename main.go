@@ -72,6 +72,7 @@ func getMatchesHandler(w http.ResponseWriter, r *http.Request){
 	}
 	day:=r.URL.Query().Get("day")
 	wnumber := r.URL.Query().Get("subscriber")
+	log.Println("Subscriber: ",wnumber)
 	intDay, err := stringToDate(day)
 	if err!=nil{
 		intDay = getNtp().Add(12*time.Hour)
@@ -124,6 +125,7 @@ func voteHandler(w http.ResponseWriter, r *http.Request){
 		return
 	}
 	wnumber := r.URL.Query().Get("subscriber")
+	log.Println("Subscriber: ",wnumber)
 	matchNum := r.URL.Query().Get("match")
 	matchNumInt, err := strconv.Atoi(matchNum)
 	if err != nil {
@@ -163,6 +165,18 @@ func resultHandler(w http.ResponseWriter, r *http.Request){
 	wnumber := r.URL.Query().Get("subscriber")
 	fmt.Fprintf(w, formResultXml(getWonResults(wnumber), countUserVotes(wnumber)))
 }
+
+func detailedResultHandler(w http.ResponseWriter, r *http.Request){
+	log.Println("Got request:", r.URL.String(), "\nContent: ", r.Body)
+	if len(r.URL.Query()) == 0 {
+		fmt.Fprintf(w, string(errorXml), "Empty request!")
+		return
+	}
+	wnumber := r.URL.Query().Get("subscriber")
+	results := getDetailedVoteResult(wnumber)
+	fmt.Fprintf(w, formDetailedResultXml(results))
+}
+
 func parseUpdErr(err string) (string) {
 	out := "Google sheet plugin error: "
 	if strings.Contains(err, "404") {
@@ -279,6 +293,7 @@ func main() {
 	http.HandleFunc(config.ServerRoot+"voteInput", voteInputHandler)
 	http.HandleFunc(config.ServerRoot+"vote", voteHandler)
 	http.HandleFunc(config.ServerRoot+"result", resultHandler)
+	http.HandleFunc(config.ServerRoot+"detailedResult", detailedResultHandler)
 	http.HandleFunc(config.ServerRoot+"updateWinners", updateWinnersHandler)
 	http.HandleFunc(config.ServerRoot+"updateMatches", updateMatchesHandler)
 	http.HandleFunc(config.ServerRoot+"updateResults", updateResultsHandler)
