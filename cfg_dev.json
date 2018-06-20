@@ -6,7 +6,7 @@
   "errorXML": "./xml/error.xml",
   "daysXML": "./xml/days.xml",
   "voteInputXML": "./xml/voteInput.xml",
-  "dbPath": "./football.db",
+  "dbPath": "./football_dev.db",
   "updateResultsKey": "g2bhANAfohpxKvMfLH77oSp8afYQDawwPp53xEmrDZJxI7EyF8oablUiQK4qi8co",
   "pathToGoogleKeyJson": "D:\\passwords\\google_key\\MiniappsTesterBot-e3f1e1953eda.json"
 }

@@ -317,7 +317,7 @@ func getDetailedVoteResult(wnumber string)([]DetailedResult){
 	//reqResUnknown := "select distinct matches.com1,matches.com2,votes.scoreA,votes.scoreB from matches,votes where votes.wnumber='def' and votes.number=matches.number except select matches.com1,matches.com2,votes.scoreA,votes.scoreB from matches,votes,results where votes.wnumber='def' and votes.number=matches.number and votes.number=results.number"
 	//known result:
 	out := []DetailedResult{}
-	rows, err := database.Query("select matches.com1,matches.com2,votes.scoreA,votes.scoreB,results.scoreA,results.scoreB from matches,votes,results where votes.wnumber='"+wnumber+"' and votes.number=matches.number and votes.number=results.number")
+	rows, err := database.Query("select matches.com1,matches.com2,votes.scoreA,votes.scoreB,results.scoreA,results.scoreB,matches.date from matches,votes,results where votes.wnumber='"+wnumber+"' and votes.number=matches.number and votes.number=results.number")
 	log.Println("Db api err: ", err)
 	var com1 string
 	var com2 string
@@ -325,13 +325,19 @@ func getDetailedVoteResult(wnumber string)([]DetailedResult){
 	var vscore2 int
 	var rscore1 int
 	var rscore2 int
+	var dateStr string
 	for rows.Next() {
-		rows.Scan(&com1, &com2, &vscore1, &vscore2, &rscore1, &rscore2)
+		rows.Scan(&com1, &com2, &vscore1, &vscore2, &rscore1, &rscore2, &dateStr)
 		//log.Println("Teams for user "+wnumber+" and date ",date,": ",com1," ",com2)
+		date, err := stringToDate(dateStr)
 		if err != nil {
 			log.Println("ERROR: string to date error: ", err)
 		}
-		out = append(out, DetailedResult{team1:com1, team2:com2, vscoreA:vscore1, vscoreB:vscore2, rscoreA:rscore1, rscoreB:rscore2, realKnown:true}) //TODO: fix date here
+		if date.Before(getNtp().Add(24 * time.Hour)) {
+			out = append(out, DetailedResult{team1: com1, team2: com2, vscoreA: vscore1, vscoreB: vscore2, rscoreA: rscore1, rscoreB: rscore2, realKnown: true}) //TODO: fix date here
+		}else {
+			out = append(out, DetailedResult{team1: com1, team2: com2, vscoreA: vscore1, vscoreB: vscore2, rscoreA: rscore1, rscoreB: rscore2, realKnown: false})
+		}
 	}
 	//unknown result
 	rows, err = database.Query("select distinct matches.com1,matches.com2,votes.scoreA,votes.scoreB from matches,votes where votes.wnumber='"+wnumber+"' and votes.number=matches.number except select matches.com1,matches.com2,votes.scoreA,votes.scoreB from matches,votes,results where votes.wnumber='"+wnumber+"' and votes.number=matches.number and votes.number=results.number")
