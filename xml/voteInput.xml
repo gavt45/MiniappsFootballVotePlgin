@@ -6,7 +6,7 @@
                 title="Give the game forecast as X:Y(For example: 1:0 or 3:3). You may give only one result!"/>
     </div>
     <navigation id="submit">
-        <link pageId="%svote?match=%s">vote</link>
+        <link pageId="%svote?match=%s">guess</link>
     </navigation>
     <navigation>
         <link pageId="%s">Main menu</link>

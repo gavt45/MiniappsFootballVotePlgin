@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e734869f-25d8-4d54-b113-a89615658276" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/cfg_dev.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/football_dev.db" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cfg.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dbApi.go" afterPath="$PROJECT_DIR$/dbApi.go" />
-      <change beforePath="$PROJECT_DIR$/football.db" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/xml/anotherResponse.xml" afterPath="$PROJECT_DIR$/xml/anotherResponse.xml" />
+      <change beforePath="$PROJECT_DIR$/xml/mainPage.xml" afterPath="$PROJECT_DIR$/xml/mainPage.xml" />
+      <change beforePath="$PROJECT_DIR$/xml/voteInput.xml" afterPath="$PROJECT_DIR$/xml/voteInput.xml" />
+      <change beforePath="$PROJECT_DIR$/xmlFormer.go" afterPath="$PROJECT_DIR$/xmlFormer.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,52 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dateApi.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dateApi.go">
+      <file leaf-file-name="anotherResponse.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xml/anotherResponse.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-              <folding>
-                <element signature="e#14#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="service.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../gopkg.in/Iwark/spreadsheet.v2/service.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbApi.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dbApi.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="336" column="81" lean-forward="false" selection-start-line="336" selection-start-column="81" selection-end-line="336" selection-end-column="81" />
-              <folding>
-                <element signature="e#14#131#0" expanded="true" />
-                <marker date="1529491847103" expanded="true" signature="1699:1731" ph="select match... matches" />
-                <marker date="1529491847103" expanded="true" signature="4023:4042" ph="DELETE FROM matches... " />
-                <marker date="1529491847103" expanded="true" signature="4625:4644" ph="DELETE FROM results... " />
-                <marker date="1529491847103" expanded="true" signature="10130:10363" ph="select votes... matches" />
-                <marker date="1529491847103" expanded="true" signature="11620:11770" ph="select match... matches" />
-                <marker date="1529491847103" expanded="true" signature="11620:11846" ph="select match... matches" />
-                <marker date="1529491847103" expanded="true" signature="12732:12840" ph="select disti... matches" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+            <state relative-caret-position="68">
+              <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -96,8 +54,8 @@
       <file leaf-file-name="voteInput.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xml/voteInput.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
+            <state relative-caret-position="102">
+              <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -106,8 +64,8 @@
       <file leaf-file-name="xmlFormer.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xmlFormer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+            <state relative-caret-position="850">
+              <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -126,8 +84,8 @@
       <file leaf-file-name="mainPage.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xml/mainPage.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="51">
+              <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -166,12 +124,14 @@
       <find>sele</find>
       <find>12</find>
       <find>&quot;wnumber&quot;</find>
+      <find>vote</find>
     </findStrings>
     <replaceStrings>
       <replace>time.Now().UTC()</replace>
       <replace>//log.Println</replace>
       <replace>'&quot;+dateToString(date)+&quot;'</replace>
       <replace>&quot;subscriber&quot;</replace>
+      <replace>&gt;guess&lt;</replace>
     </replaceStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -185,6 +145,7 @@
     <push-targets>
       <push-target-info target-remote="origin" target-branch="dateFix" repo="$PROJECT_DIR$" source="master" />
       <push-target-info target-remote="origin" target-branch="syncWithSheet" repo="$PROJECT_DIR$" source="updateWinnersToSheet" />
+      <push-target-info target-remote="origin" target-branch="secondMaster" repo="$PROJECT_DIR$" source="detailedResult" />
     </push-targets>
     <favorite-branches>
       <branch-storage>
@@ -221,16 +182,16 @@
         <option value="$PROJECT_DIR$/xml/error.xml" />
         <option value="$PROJECT_DIR$/xml/days.xml" />
         <option value="$PROJECT_DIR$/cfg.json" />
-        <option value="$PROJECT_DIR$/xml/mainPage.xml" />
-        <option value="$PROJECT_DIR$/xml/voteInput.xml" />
-        <option value="$PROJECT_DIR$/xml/anotherResponse.xml" />
         <option value="$PROJECT_DIR$/util.go" />
         <option value="$PROJECT_DIR$/dateApi.go" />
         <option value="$PROJECT_DIR$/googleSheetsApi.go" />
         <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/xmlFormer.go" />
         <option value="$PROJECT_DIR$/cfg_dev.json" />
         <option value="$PROJECT_DIR$/dbApi.go" />
+        <option value="$PROJECT_DIR$/xmlFormer.go" />
+        <option value="$PROJECT_DIR$/xml/voteInput.xml" />
+        <option value="$PROJECT_DIR$/xml/mainPage.xml" />
+        <option value="$PROJECT_DIR$/xml/anotherResponse.xml" />
       </list>
     </option>
   </component>
@@ -396,7 +357,8 @@
     <MESSAGE value="tested update results from sheet" />
     <MESSAGE value="wnumber to subscriber patch" />
     <MESSAGE value="detailed result" />
-    <option name="LAST_COMMIT_MESSAGE" value="detailed result" />
+    <MESSAGE value="small fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -715,22 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml/response.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/days.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cfg.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -745,42 +691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml/error.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/anotherResponse.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../gopkg.in/Iwark/spreadsheet.v2/service.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1122">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/voteInput.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="78" lean-forward="false" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xml/mainPage.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -790,16 +704,6 @@
         <state relative-caret-position="901">
           <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dateApi.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding>
-            <element signature="e#14#83#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -813,29 +717,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xmlFormer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="31" column="11" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cfg_dev.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="280" column="20" lean-forward="false" selection-start-line="280" selection-start-column="20" selection-end-line="280" selection-end-column="20" />
-          <folding>
-            <element signature="e#14#126#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -853,6 +739,82 @@
             <marker date="1529491847103" expanded="true" signature="11620:11846" ph="select match... matches" />
             <marker date="1529491847103" expanded="true" signature="12732:12840" ph="select disti... matches" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xmlFormer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="55" column="35" lean-forward="true" selection-start-line="55" selection-start-column="35" selection-end-line="55" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dateApi.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#14#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="280" column="20" lean-forward="false" selection-start-line="280" selection-start-column="20" selection-end-line="280" selection-end-column="20" />
+          <folding>
+            <element signature="e#14#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/voteInput.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/response.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/error.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/days.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/mainPage.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xml/anotherResponse.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="51" lean-forward="true" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
