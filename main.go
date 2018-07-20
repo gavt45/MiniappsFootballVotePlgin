@@ -71,7 +71,7 @@ func getMatchesHandler(w http.ResponseWriter, r *http.Request){
 		return
 	}
 	day:=r.URL.Query().Get("day")
-	wnumber := r.URL.Query().Get("wnumber")
+	wnumber := r.URL.Query().Get("subscriber")
 	intDay, err := stringToDate(day)
 	if err!=nil{
 		intDay = getNtp().Add(12*time.Hour)
@@ -87,7 +87,7 @@ func getDatesHandler(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, string(errorXml), "Empty request!")
 		return
 	}
-	//wnumber := r.URL.Query().Get("wnumber")
+	//wnumber := r.URL.Query().Get("subscriber")
 	//log.Println("Days: ",getNtp().Day())
 	dates := removeDublicates(selectAllLargerThen(getNtp().Add(12*time.Hour), getDates()))
 	fmt.Fprintf(w, formVoteXml(dates))
@@ -123,7 +123,7 @@ func voteHandler(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, string(errorXml), "Empty request!")
 		return
 	}
-	wnumber := r.URL.Query().Get("wnumber")
+	wnumber := r.URL.Query().Get("subscriber")
 	matchNum := r.URL.Query().Get("match")
 	matchNumInt, err := strconv.Atoi(matchNum)
 	if err != nil {
@@ -160,7 +160,7 @@ func resultHandler(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, string(errorXml), "Empty request!")
 		return
 	}
-	wnumber := r.URL.Query().Get("wnumber")
+	wnumber := r.URL.Query().Get("subscriber")
 	fmt.Fprintf(w, formResultXml(getWonResults(wnumber), countUserVotes(wnumber)))
 }
 func parseUpdErr(err string) (string) {

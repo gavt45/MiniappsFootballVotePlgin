@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e734869f-25d8-4d54-b113-a89615658276" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dbApi.go" afterPath="$PROJECT_DIR$/dbApi.go" />
-      <change beforePath="$PROJECT_DIR$/football.db" afterPath="$PROJECT_DIR$/football.db" />
-      <change beforePath="$PROJECT_DIR$/googleSheetsApi.go" afterPath="$PROJECT_DIR$/googleSheetsApi.go" />
       <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="251" column="29" lean-forward="false" selection-start-line="251" selection-start-column="29" selection-end-line="251" selection-end-column="29" />
+            <state relative-caret-position="236">
+              <caret line="39" column="194" lean-forward="false" selection-start-line="39" selection-start-column="185" selection-end-line="39" selection-end-column="194" />
               <folding>
                 <element signature="e#14#126#0" expanded="true" />
               </folding>
@@ -128,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="googleSheetsApi.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="googleSheetsApi.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+            <state relative-caret-position="562">
+              <caret line="353" column="14" lean-forward="false" selection-start-line="353" selection-start-column="14" selection-end-line="353" selection-end-column="14" />
               <folding>
                 <element signature="e#14#199#0" expanded="true" />
               </folding>
@@ -160,11 +157,13 @@
       <find>selectAllLargerThen</find>
       <find>sele</find>
       <find>12</find>
+      <find>&quot;wnumber&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>time.Now().UTC()</replace>
       <replace>//log.Println</replace>
       <replace>'&quot;+dateToString(date)+&quot;'</replace>
+      <replace>&quot;subscriber&quot;</replace>
     </replaceStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -177,6 +176,7 @@
     </option>
     <push-targets>
       <push-target-info target-remote="origin" target-branch="dateFix" repo="$PROJECT_DIR$" source="master" />
+      <push-target-info target-remote="origin" target-branch="syncWithSheet" repo="$PROJECT_DIR$" source="updateWinnersToSheet" />
     </push-targets>
     <favorite-branches>
       <branch-storage>
@@ -220,8 +220,8 @@
         <option value="$PROJECT_DIR$/dateApi.go" />
         <option value="$PROJECT_DIR$/xmlFormer.go" />
         <option value="$PROJECT_DIR$/googleSheetsApi.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/dbApi.go" />
+        <option value="$PROJECT_DIR$/main.go" />
       </list>
     </option>
   </component>
@@ -394,7 +394,8 @@
     <MESSAGE value="untested date fix" />
     <MESSAGE value="tested date fix (only day and month)" />
     <MESSAGE value="tested update winners from sheet" />
-    <option name="LAST_COMMIT_MESSAGE" value="tested update winners from sheet" />
+    <MESSAGE value="tested update results from sheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested update results from sheet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -814,22 +815,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="251" column="29" lean-forward="false" selection-start-line="251" selection-start-column="29" selection-end-line="251" selection-end-column="29" />
+        <state relative-caret-position="562">
+          <caret line="353" column="14" lean-forward="false" selection-start-line="353" selection-start-column="14" selection-end-line="353" selection-end-column="14" />
           <folding>
-            <element signature="e#14#126#0" expanded="true" />
+            <element signature="e#14#199#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/googleSheetsApi.go">
+    <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+        <state relative-caret-position="236">
+          <caret line="39" column="194" lean-forward="false" selection-start-line="39" selection-start-column="185" selection-end-line="39" selection-end-column="194" />
           <folding>
-            <element signature="e#14#199#0" expanded="true" />
+            <element signature="e#14#126#0" expanded="true" />
           </folding>
         </state>
       </provider>
